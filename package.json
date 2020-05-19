@@ -1,0 +1,48 @@
+{
+  "name": "spellcast-ext-rpg-scripts",
+  "version": "0.50.0",
+  "description": "Spellcast's RPG Scripts extension.",
+  "main": "lib/extension.js",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "exm": "github:cronvel/exm"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "tea-time -R dot -O"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cronvel/spellcast-ext-rpg-scripts.git"
+  },
+  "keywords": [
+    "spellcast",
+    "electron",
+    "client"
+  ],
+  "author": "Cédric Ronvel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cronvel/spellcast-ext-rpg-scripts/issues"
+  },
+  "config": {
+    "tea-time": {
+      "coverDir": [
+        "lib"
+      ]
+    }
+  },
+  "copyright": {
+    "title": "Spellcast's Electron Client Extension",
+    "years": [
+      2014,
+      2020
+    ],
+    "owner": "Cédric Ronvel"
+  }
+}
