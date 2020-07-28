@@ -1,6 +1,6 @@
 {
   "name": "spellcast-ext-rpg-scripts",
-  "version": "0.50.3",
+  "version": "0.50.4",
   "description": "Spellcast's RPG Scripts extension.",
   "main": "lib/extension.js",
   "engines": {
@@ -10,7 +10,7 @@
     "test": "test"
   },
   "dependencies": {
-    "exm": "github:cronvel/exm"
+    "exm": "^0.2.1"
   },
   "devDependencies": {},
   "scripts": {
