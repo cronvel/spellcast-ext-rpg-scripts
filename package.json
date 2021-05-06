@@ -1,6 +1,6 @@
 {
   "name": "spellcast-ext-rpg-scripts",
-  "version": "0.50.6",
+  "version": "0.50.7",
   "description": "Spellcast's RPG Scripts extension.",
   "main": "lib/extension.js",
   "engines": {
