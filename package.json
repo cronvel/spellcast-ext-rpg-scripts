@@ -1,6 +1,6 @@
 {
   "name": "spellcast-ext-rpg-scripts",
-  "version": "0.50.5",
+  "version": "0.50.6",
   "description": "Spellcast's RPG Scripts extension.",
   "main": "lib/extension.js",
   "engines": {
@@ -10,7 +10,7 @@
     "test": "test"
   },
   "dependencies": {
-    "exm": "^0.5.6"
+    "exm": "^0.5.7"
   },
   "scripts": {
     "test": "tea-time -R dot -O"
