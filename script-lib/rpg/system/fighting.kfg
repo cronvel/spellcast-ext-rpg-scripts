@@ -32,16 +32,16 @@
 				critical-chance: 0.05
 			
 			melee-attack-roll:
-				over-power: 2.5
+				overpower: 2.5
 			
 			ranged-aiming-roll:
-				over-power: 1.5
+				overpower: 1.5
 			
 			ranged-attack-roll:
-				over-power: 3
+				overpower: 3
 			
 			wrestling-attack-roll:
-				over-power: 3
+				overpower: 3
 		
 		[set $fight]
 			foes: <Array>
@@ -1017,7 +1017,7 @@
 		[set $damages]
 			$= quantity-roll( $local.attack-score , $local.defense-score ,
 			$=   base: 15 ,
-			$=   over-power: 2 ,
+			$=   overpower: 2 ,
 			$=   critical-factor: $args.usage.compound.critical-factor ,
 			$=   critical-chance: 0.05 ,
 			$=   lower-divide: false ,
@@ -1106,7 +1106,7 @@
 		[set $healing]
 			$= quantity-roll( $local.healing-score , $local.defense-score ,
 			$=   base: 10 ,
-			$=   over-power: 1 ,
+			$=   overpower: 1 ,
 			$=   critical-factor: $args.usage.compound.critical-factor ,
 			$=   critical-chance: 0.05 ,
 			$=   lower-divide: true ,
