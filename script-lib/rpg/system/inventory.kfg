@@ -333,8 +333,7 @@
 					[set $local.item] $local.equipped-items[$args.index]
 					
 					[if $local.scheduler]
-						[schedule-action $local.scheduler]
-							performer: $performer
+						[schedule-action $local.scheduler $performer]
 							action: unequip
 							action-data:
 								performer: $performer
@@ -362,8 +361,7 @@
 						[cancel]
 					
 					[if $local.scheduler]
-						[schedule-action $local.scheduler]
-							performer: $performer
+						[schedule-action $local.scheduler $performer]
 							action: equip
 							action-data:
 								performer: $performer
