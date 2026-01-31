@@ -66,8 +66,7 @@
 				speed: 0
 				goneThrough: 0
 				alertness: $= 100 / $local.foe.actual.stats.fighting
-			[add-to-scheduler $fight.scheduler]
-				performer: $local.foe
+			[add-to-scheduler $fight.scheduler $local.foe]
 				ready-time: $local.foe.adhoc.fight.alertness
 
 		[foreach $args.allies => $local.index : $local.ally]
@@ -83,8 +82,7 @@
 				speed: 0
 				goneThrough: 0
 				alertness: $= 100 / $local.ally.actual.stats.fighting
-			[add-to-scheduler $fight.scheduler]
-				performer: $local.ally
+			[add-to-scheduler $fight.scheduler $local.ally]
 				ready-time: $local.ally.adhoc.fight.alertness
 
 		#[debug info] $fight.allies
@@ -126,7 +124,7 @@
 				[call manage-death] $args.performer
 				[return]
 			[elseif $fight.ending]
-				[remove-from-scheduler $fight.scheduler] $args.performer
+				[remove-from-scheduler $fight.scheduler $args.performer]
 				[return]
 			
 			[set $fight.performer] $args.performer
@@ -171,7 +169,7 @@
 			[if $args.performer.status.health <= 0]
 				[call manage-death] $args.performer
 			[elseif $fight.ending]
-				[remove-from-scheduler $fight.scheduler] $args.performer
+				[remove-from-scheduler $fight.scheduler $args.performer]
 			#[message] $> recovered: ${args.performer.name} ${args.action}
 			#[set $local.fn] $= $args.action .. "-recovered"
 			#[call $local.fn] $args.action-data
@@ -195,7 +193,7 @@
 			[elseif ( ! $fight.alive-allies.length ) || ( ! $fight.alive-foes.length )]
 				[set $fight.ending] true
 			
-			[advance-scheduler $fight.scheduler 10]
+			[advance-scheduler $fight.scheduler] 10
 			#[pause 1]
 			#[message] After pause
 
@@ -561,8 +559,7 @@
 		#[message] $> release time: ${performer.actual-usages.melee-fighting.compound.release-time}
 		#[message] $> recover time: ${performer.actual-usages.melee-fighting.compound.recover-time}
 		
-		[schedule-action $fight.scheduler]
-			performer: $performer
+		[schedule-action $fight.scheduler $performer]
 			action: melee-fighting
 			action-data:
 				performer: $performer
@@ -667,8 +664,7 @@
 			[set $performer.adhoc.fight.press-value] 0
 			[message] $> ${performer.name//uc1} charges toward the opposing crew.
 		
-		[schedule-action $fight.scheduler]
-			performer: $performer
+		[schedule-action $fight.scheduler $performer]
 			action: charge
 			action-data:
 				performer: $performer
@@ -747,8 +743,7 @@
 		[set $performer.adhoc.fight.speed] 0
 		[set $performer.adhoc.fight.offensiveness] -1
 		
-		[schedule-action $fight.scheduler]
-			performer: $performer
+		[schedule-action $fight.scheduler $performer]
 			action: ranged-fighting
 			action-data:
 				performer: $performer
@@ -914,8 +909,7 @@
 		[if $item.params.offensiveness is-number?]
 			[set $performer.adhoc.fight.offensiveness] $item.params.offensiveness
 
-		[schedule-action $fight.scheduler]
-			performer: $performer
+		[schedule-action $fight.scheduler $performer]
 			action: battle-ability
 			action-data:
 				performer: $performer
@@ -967,12 +961,14 @@
 
 
 
-	[fn equip-prepared] <TagContainer>
+	[fn equip-prepared]
+		[noop]
 	
 	[fn equip-released]
 		[call rpg:inventory/equip-object] $args
 	
-	[fn unequip-prepared] <TagContainer>
+	[fn unequip-prepared]
+		[noop]
 	
 	[fn unequip-released]
 		[call rpg:inventory/unequip-object] $args
@@ -1076,7 +1072,7 @@
 		
 		[set $performer.status.alive] false
 		[message] $> ^R^+${performer.name//uc1} is dead.
-		[remove-from-scheduler $fight.scheduler] $performer
+		[remove-from-scheduler $fight.scheduler $performer]
 	
 	
 	
