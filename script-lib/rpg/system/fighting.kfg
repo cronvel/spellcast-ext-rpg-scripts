@@ -1,6 +1,19 @@
-
 [[doctype spellcast/book]]
 [[locales locales/*]]
+
+
+
+# DEPRECATED !
+# A lot of things have change in Spellcast that broke this code.
+# It should be upgraded.
+
+# Change performer -> actor everywhere.
+# Scheduler have some changes that should be checked.
+# Entity "innate" items has some changes too.
+# Color codes are now using the Book Source syntax instead of vanilla Terminal Kit.
+# And more uncompatibilities...
+
+
 
 [system rpg:fighting]
 
