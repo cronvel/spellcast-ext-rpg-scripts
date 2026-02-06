@@ -6,12 +6,14 @@
 # DEPRECATED !
 # A lot of things have change in Spellcast that broke this code.
 # It should be upgraded.
-
-# Change performer -> actor everywhere.
-# Scheduler have some changes that should be checked.
-# Entity "innate" items has some changes too.
-# Color codes are now using the Book Source syntax instead of vanilla Terminal Kit.
-# And more uncompatibilities...
+# 
+# * Change performer -> actor everywhere.
+# * Color codes are now using the Book Source syntax instead of vanilla Terminal Kit.
+# * $local.varname -> $.varname
+# * item.own-stats -> item.stats or item.params or whatever
+# * Scheduler have some changes that should be checked.
+# * Entity "innate" items has some changes too.
+# * And more uncompatibilities...
 
 
 
