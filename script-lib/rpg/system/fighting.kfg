@@ -7,11 +7,12 @@
 # A lot of things have change in Spellcast that broke this code.
 # It should be upgraded.
 # 
-# * Change performer -> actor everywhere.
+# * Change .performer -> .actor everywhere.
 # * Color codes are now using the Book Source syntax instead of vanilla Terminal Kit.
-# * $local.varname -> $.varname
-# * item.own-stats -> item.stats or item.params or whatever
+# * Change item.own-stats -> item.stats or item.params or whatever.
+# * Entity#actual-usages does not exist anymore, use Entity#stats.usages namespace, see test/books/entity-and-items.kfg
 # * Scheduler have some changes that should be checked.
+# * $local.varname -> $.varname
 # * Entity "innate" items has some changes too.
 # * And more uncompatibilities...
 
